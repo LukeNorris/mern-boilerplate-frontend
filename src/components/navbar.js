@@ -3,8 +3,8 @@ import { useLogout } from '../hooks/useLogout'
 import { useAuthContext } from '../hooks/useAuthContext'
 
 const Navbar = () => {
- const { user } = useAuthContext()
-  const logout = useLogout()
+  const { logout } = useLogout()
+  const { user } = useAuthContext()
 
   const handleClick = () => {
     logout()
@@ -20,7 +20,7 @@ const Navbar = () => {
           {user && (
             <div>
               <span>{user.email}</span>
-              <button onClick={handleClick}>Log Out</button>
+              <button onClick={handleClick}>Log out</button>
             </div>
           )}
           {!user && (
@@ -29,7 +29,6 @@ const Navbar = () => {
               <Link to="/signup">Signup</Link>
             </div>
           )}
-            
         </nav>
       </div>
     </header>
